@@ -54,7 +54,7 @@ const createBox = (...arr) => {
     activeLabel.innerText="Hesap Durumu :"
     let activeData = document.createElement("div")
     activeData.classList.add("active-data")
-    activeData.innerText=arr[4].checked ? "Aktif" : "Inaktif"
+    activeData.innerText=arr[4].checked ? "Aktif" : "Pasif"
     activeContainer.append(activeLabel,activeData)
     boxData.append(courseContainer,teacherContainer,activeContainer)
     //xclose
