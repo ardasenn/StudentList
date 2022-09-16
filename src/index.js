@@ -6,12 +6,13 @@ const dataRadio = document.querySelectorAll(".radio-buttons input")
 
 
 btn.addEventListener("click", (e) => {
-createBox(dataInputs,dataRadio)
+createBox(...dataInputs,...dataRadio)
 })
 
 
 
 const createBox = (...arr) => {
+  console.log(arr);
     //box skeleton
     let box = document.createElement("div")
     box.classList.add("box")
@@ -19,7 +20,7 @@ const createBox = (...arr) => {
     let fullName = document.createElement("div")
     fullName.classList.add("full-name")
     let nameText = document.createElement("h3")
-    nameText.innerText=arr[0][0].value +" "+ arr[0][1].value
+    nameText.innerText=arr[0].value +" "+ arr[1].value
     fullName.append(nameText)
     box.append(fullName)
     //box data
@@ -33,7 +34,7 @@ const createBox = (...arr) => {
     courseLabel.innerText="Kurs :"
     let courseData = document.createElement("div")
     courseData.classList.add("course-data")
-    courseData.innerText=arr[0][2].value
+    courseData.innerText=arr[2].value
     courseContainer.append(courseLabel,courseData)
      //teacher
      let teacherContainer = document.createElement("div")
@@ -43,7 +44,7 @@ const createBox = (...arr) => {
      teacherLabel.innerText="Eğitmen :"
      let teacherData = document.createElement("div")
      teacherData.classList.add("teacher-data")
-     teacherData.innerText=arr[0][3].value
+     teacherData.innerText=arr[3].value
      teacherContainer.append(teacherLabel,teacherData)
       //active
     let activeContainer = document.createElement("div")
@@ -53,7 +54,7 @@ const createBox = (...arr) => {
     activeLabel.innerText="Hesap Durumu :"
     let activeData = document.createElement("div")
     activeData.classList.add("active-data")
-    activeData.innerText=arr[1][0].checked ? "Aktif" : "Inaktif"
+    activeData.innerText=arr[4].checked ? "Aktif" : "Inaktif"
     activeContainer.append(activeLabel,activeData)
     boxData.append(courseContainer,teacherContainer,activeContainer)
     //xclose
@@ -68,7 +69,6 @@ const createBox = (...arr) => {
     })    
 
     box.append(closeBtn,boxData)
-     console.log(box);
     let container = document.querySelector(".box-container")
     container.append(box)   
     
